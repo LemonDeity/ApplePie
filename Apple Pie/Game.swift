@@ -7,4 +7,22 @@
 //
 
 import Foundation
-
+struct Game{
+    var word:String
+    var incorrectMovesRemaining : Int
+    var correctLettersGuessed:[Character]
+    var piece:String
+    init(_ word:String, _ moves:Int){
+        self.word = word
+        incorrectMovesRemaining = moves
+        correctLettersGuessed = Array(repeating: "_", count: moves)
+        piece = ""
+        updatePiece()
+    }
+    mutating func updatePiece(){
+        piece = ""
+        for i in correctLettersGuessed{
+            piece += String(i)
+        }
+    }
+}
