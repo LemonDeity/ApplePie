@@ -9,20 +9,21 @@
 import Foundation
 struct Game{
     var word:String
-    var incorrectMovesRemaining : Int
-    var correctLettersGuessed:[Character]
-    var piece:String
-    init(_ word:String, _ moves:Int){
-        self.word = word
-        incorrectMovesRemaining = moves
-        correctLettersGuessed = Array(repeating: "_", count: moves)
-        piece = ""
-        updatePiece()
-    }
-    mutating func updatePiece(){
-        piece = ""
-        for i in correctLettersGuessed{
-            piece += String(i)
+    var guessedLetters:[Character]
+    
+    var formattedWord:String{
+        var guessedWord = ""
+        for letter in word{
+            if guessedLetters.contains(letter){
+                guessedWord += "\(letter) "
+            }else{
+                guessedWord += "_ "
+            }
         }
+        return guessedWord
+    }
+
+    mutating func appendLetter(letter : Character){
+        guessedLetters.append(letter)
     }
 }

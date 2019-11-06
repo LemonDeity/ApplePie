@@ -18,6 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iq1-Kw-3TS">
+                                <rect key="frame" x="670" y="424" width="50" height="30"/>
+                                <state key="normal" title="Restart"/>
+                                <connections>
+                                    <action selector="restartPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oO3-Ne-bbY"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="M6T-wb-hsi">
                                 <rect key="frame" x="0.0" y="24" width="1366" height="980"/>
                                 <subviews>
@@ -265,12 +272,15 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="M6T-wb-hsi" secondAttribute="bottom" id="33S-j7-NK3"/>
                             <constraint firstItem="M6T-wb-hsi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CY8-lM-OmJ"/>
+                            <constraint firstItem="iq1-Kw-3TS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="670" id="EBz-rb-GbS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M6T-wb-hsi" secondAttribute="trailing" id="Zju-Ey-p3e"/>
                             <constraint firstItem="M6T-wb-hsi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iuR-bZ-8Gd"/>
+                            <constraint firstItem="iq1-Kw-3TS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="400" id="t9c-uX-pKz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="Restart" destination="iq1-Kw-3TS" id="Kzt-iC-s4q"/>
                         <outlet property="correctWordLabel" destination="RKj-N1-6cg" id="Voc-Us-jaS"/>
                         <outlet property="scoreLabel" destination="GGE-2Z-z9j" id="1hO-ke-x2h"/>
                         <outlet property="treeImageView" destination="QsP-CI-sfr" id="Cmd-4R-aKC"/>
