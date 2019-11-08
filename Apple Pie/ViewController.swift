@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     @IBOutlet var correctWordLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var letterButtons: [UIButton]!
-    @IBOutlet weak var Restart: UIButton!
     var currentGame : Game!
     var listOfWords:[String] = ["pizza","green","soccer","basketball"]
     var totalWin = 0
@@ -38,17 +37,24 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func restartPressed(_ sender: Any) {
+    @IBAction func restart(_ sender: Any) {
         newRound()
     }
+    
     func updateUI(){
         scoreLabel.text = "Wins: \(totalWin), Losses: \(totalLoss)"
         correctWordLabel.text = currentGame.formattedWord
         if (incorrectMoves == -1){
             treeImageView.image = UIImage(named: "Tree 0")
             correctWordLabel.text = "YOU LOST !!! The right answer was \(currentGame.word)"
+            totalLoss -= 1
         }else{
             treeImageView.image = UIImage(named: "Tree \(incorrectMoves)")
+            if !currentGame.formattedWord.contains("_"){
+                correctWordLabel.text = "YOU WON !!! The Answer is \(currentGame.word). Click on the Tree to start a new Round"
+                enableButtons(false)
+                totalWin += 1
+            }
         }
     }
     
