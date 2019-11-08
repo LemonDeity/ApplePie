@@ -15,8 +15,22 @@ class ViewController: UIViewController {
     @IBOutlet var letterButtons: [UIButton]!
     var currentGame : Game!
     var listOfWords:[String] = ["pizza","green","soccer","basketball"]
-    var totalWin = 0
-    var totalLoss = 0
+    var totalWin : Int = 0{
+        willSet(newWin){
+            scoreLabel.text = "Wins: \(totalWin), Losses: \(totalLoss)"
+        }
+        didSet{
+            scoreLabel.text = "Wins: \(totalWin), Losses: \(totalLoss)"
+        }
+    }
+    var totalLoss : Int = 0{
+        willSet(newLoss){
+            scoreLabel.text = "Wins: \(totalWin), Losses: \(totalLoss)"
+        }
+        didSet{
+            scoreLabel.text = "Wins: \(totalWin), Losses: \(totalLoss)"
+        }
+    }
     var incorrectMoves = 7
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,17 +51,18 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func restart(_ sender: Any) {
+    @IBAction func restart(_ sender: UITapGestureRecognizer) {
         newRound()
     }
     
     func updateUI(){
         scoreLabel.text = "Wins: \(totalWin), Losses: \(totalLoss)"
         correctWordLabel.text = currentGame.formattedWord
+        
         if (incorrectMoves == -1){
             treeImageView.image = UIImage(named: "Tree 0")
             correctWordLabel.text = "YOU LOST !!! The right answer was \(currentGame.word)"
-            totalLoss -= 1
+            totalLoss += 1
         }else{
             treeImageView.image = UIImage(named: "Tree \(incorrectMoves)")
             if !currentGame.formattedWord.contains("_"){

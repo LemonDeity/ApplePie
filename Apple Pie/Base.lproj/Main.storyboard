@@ -21,11 +21,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="M6T-wb-hsi">
                                 <rect key="frame" x="0.0" y="24" width="1366" height="980"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tree 7" translatesAutoresizingMaskIntoConstraints="NO" id="QsP-CI-sfr">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tree 7" translatesAutoresizingMaskIntoConstraints="NO" id="QsP-CI-sfr">
                                         <rect key="frame" x="0.0" y="0.0" width="1366" height="490"/>
                                         <gestureRecognizers/>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="Mjf-Cq-O7e" appends="YES" id="ad5-B8-HK7"/>
+                                            <outletCollection property="gestureRecognizers" destination="K1n-J0-srC" appends="YES" id="CcX-tN-orn"/>
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="swg-xt-Onv">
@@ -307,9 +307,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Mjf-Cq-O7e">
+                <tapGestureRecognizer id="K1n-J0-srC">
                     <connections>
-                        <action selector="restart:" destination="BYZ-38-t0r" id="0I5-eA-Lro"/>
+                        <action selector="restart:" destination="BYZ-38-t0r" id="974-0z-rxi"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
